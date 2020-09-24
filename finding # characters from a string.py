@@ -10,7 +10,7 @@ string = "'the quick brown fox jumps over the lazy dog !!!'"
 char_map = collections.Counter(string).items()
 
 # sorting the list of tuples based on the character
-char_map = sorted(char_map, key=lambda x: x[0])
+char_map = sorted(char_map)
 
 # printing the result
 for char, num in char_map:
