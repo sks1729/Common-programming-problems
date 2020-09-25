@@ -7,7 +7,7 @@ import itertools
 nums = [1, 6, 1, 8, 0, 3, 3, 9, 8, 8, 7, 4, 9, 8, 9, 4, 8, 4, 8, 2, 0, 4, 5]
 
 # sum to find from part of the list
-sum = 1000
+sum = 10
 
 # collection for storing sums
 # contains nested list

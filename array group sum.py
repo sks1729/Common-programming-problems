@@ -1,4 +1,4 @@
-# find group of numbers from an array whose sum equals to the given target_sum
+# find unique group of numbers from an array whose sum equals to the given sum
 
 # module for efficient looping
 import itertools
@@ -11,23 +11,41 @@ def array_group_sum(arr, length, target_sum):
         print("No match found")
         raise SystemExit
 
-    # for storing number groups
-    groups_list = []
+    # sets are used to handle common groups
+    output = set()
 
-    # gives list of all the combinations of the specified length 
-    num_groups = list(itertools.combinations(arr, length))
+    # faster algorithm if required pairs
+    if length == 2:
+        # sets are used to handle common pairs
+        seen = set()
 
-    # checking if the sum is equal to target_sum,
-    # and handling the duplicate groups
-    for group in num_groups:
-        if sum(group) == target_sum and group not in groups_list:
-            groups_list.append(group)
+        for num in arr:
+            # target + num = sum
+            target = target_sum - num
 
-    if len(groups_list) == 0:
+            # this handles the fact that (2, 3) and (3, 2) are the same
+            if target not in seen:
+                seen.add(num)
+            else:
+                output.add((min(target, num), max(target, num)))
+
+    else:
+        # gives list of all the combinations of the specified length
+        num_groups = set(itertools.combinations(arr, length))
+
+        # checking if the sum is equal to sum
+        # sorted is used to handle the fact that,
+        # (1, 2, 3, 4), (1, 3, 4, 2), (4, 3, 2, 1), and next 21 groups are same
+        for group in num_groups:
+            group = tuple(sorted(group))
+            if sum(group) == target_sum:
+                output.add(group)
+
+    if len(output) == 0:
         print("No match found")
         raise SystemExit
 
-    print("\n".join(map(str, groups_list)))
+    print("\n".join(map(str, output)))
 
 
 nums = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3, 2, 3, 8, 4, 6, 2, 6, 4]
