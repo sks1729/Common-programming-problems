@@ -44,7 +44,7 @@ def anagrams(string, lst):
         print("No match found")
 
 
-anagrams("Church of Scientology", ["rich-chosen goofy cult"])           # ["rich-chosen goofy cult"]
+anagrams("One-dollar bill", ["One dollar bill"])                        # ["rich-chosen goofy cult"]
 
 anagrams("allergy", ["gallery", "largely", "clergy"])                   # ['gallery', 'largely']
 
