@@ -1,6 +1,6 @@
 """
     Two or more words are said to be Anagram to each other if they have
-    the same alphabets, after non-alphabets are neglected
+    the same alphabets, after non-alphabets are removed
 
     STEPS INVOLVED:
 1.  we replace all the non-alphabets with empty-string ""
