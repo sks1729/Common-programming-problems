@@ -10,7 +10,7 @@
 """
 
 
-# returns the strings from the list lst which are anagram to string
+# prints the strings from the list lst which are anagram to string
 def anagrams(string, lst):
     anagrams = []
 
@@ -39,9 +39,13 @@ def anagrams(string, lst):
             anagrams.append(lst[i])
 
     if anagrams:
-        return anagrams
+        print(anagrams)
     else:
-        return ("No match found")
+        print("No match found")
 
 
-print(anagrams("McDonald's restaurants", ["Church of Scientology", "Uncle Sam's standard rot"]))
+anagrams("Church of Scientology", ["rich-chosen goofy cult"])           # ["rich-chosen goofy cult"]
+
+anagrams("allergy", ["gallery", "largely", "clergy"])                   # ['gallery', 'largely']
+
+anagrams("first", ["thirst", "fist", "surf"])                           # No match found
