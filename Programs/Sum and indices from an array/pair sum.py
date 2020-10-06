@@ -15,6 +15,7 @@ def pair_sum(nums, target_sum):
         else:
             output.add((min(complement, num), max(complement, num)))
 
+    print("\n".join(map(str, output)))
 
 arr = [1, 6, 1, 8, 0, 3, 3, 9, 8, 8, 7, 4, 9, 8, 9, 4, 8, 4, 8, 2, 0, 4, 5]
 
