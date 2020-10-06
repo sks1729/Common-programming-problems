@@ -21,13 +21,13 @@ def array_group_sum(arr, length, target_sum):
 
         for num in arr:
             # target + num = target_sum
-            target = target_sum - num
+            complement = target_sum - num
 
             # this handles the fact that (2, 3) and (3, 2) are the same
-            if target not in seen:
+            if complement not in seen:
                 seen.add(num)
             else:
-                output.add((min(target, num), max(target, num)))
+                output.add((min(complement, num), max(complement, num)))
 
     else:
         # gives list of all the combinations of the specified length
