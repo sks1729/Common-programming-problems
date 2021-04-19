@@ -44,7 +44,7 @@ def anagrams(string, lst):
         print("No match found")
 
 
-anagrams("One-dollar bill", ["One dollar bill"])                        # ["rich-chosen goofy cult"]
+anagrams("Madam Curie", ["Radium came"])                                # ['Madam Curie', 'Radium came']
 
 anagrams("allergy", ["gallery", "largely", "clergy"])                   # ['gallery', 'largely']
 
